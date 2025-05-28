@@ -39,11 +39,11 @@ export default function PWAPrompt() {
     };
 
     return showInstall ? (
-        <div className="fixed bottom-5 left-5 right-5 bg-baseclr text-white p-4 rounded-md shadow-lg flex justify-between items-center z-50">
+        <div className="fixed bottom-5 left-5 right-5 bg-baseclr text-white p-4 rounded-md shadow-lg flex justify-between items-center z-50 max-w-96 mx-auto">
             <span className="text-sm">Add this app to your home screen?</span>
             <button
                 onClick={handleInstall}
-                className="ml-4 bg-white text-baseclr px-3 py-1 rounded hover:bg-baseclr transition text-sm">
+                className="ml-4 bg-white text-baseclr px-3 py-1 rounded transition text-sm cursor-pointer">
                 Install
             </button>
         </div>
