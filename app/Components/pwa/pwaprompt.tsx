@@ -1,14 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
 
+type BeforeInstallPromptEvent = Event & {
+    prompt: () => Promise<void>;
+    userChoice: Promise<{
+        outcome: "accepted" | "dismissed";
+        platform: string;
+    }>;
+};
+
 export default function PWAPrompt() {
-    const [deferredPrompt, setDeferredPrompt] = useState<Event | null>(null);
+    const [deferredPrompt, setDeferredPrompt] =
+        useState<BeforeInstallPromptEvent | null>(null);
     const [showInstall, setShowInstall] = useState(false);
 
     useEffect(() => {
-        const handler = (e: any) => {
-            e.preventDefault();
-            setDeferredPrompt(e);
+        const handler = (e: Event) => {
+            const promptEvent = e as BeforeInstallPromptEvent;
+            promptEvent.preventDefault();
+            setDeferredPrompt(promptEvent);
             setShowInstall(true);
         };
 
@@ -20,8 +30,8 @@ export default function PWAPrompt() {
     const handleInstall = async () => {
         if (!deferredPrompt) return;
 
-        (deferredPrompt as any).prompt();
-        const { outcome } = await (deferredPrompt as any).userChoice;
+        await deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
         console.log(`User response to the install prompt: ${outcome}`);
 
         setDeferredPrompt(null);
@@ -29,11 +39,11 @@ export default function PWAPrompt() {
     };
 
     return showInstall ? (
-        <div className="fixed bottom-5 left-5 right-5 bg-blue-600 text-white p-4 rounded-md shadow-lg flex justify-between items-center">
-            <span>Add this app to your home screen?</span>
+        <div className="fixed bottom-5 left-5 right-5 bg-baseclr text-white p-4 rounded-md shadow-lg flex justify-between items-center z-50">
+            <span className="text-sm">Add this app to your home screen?</span>
             <button
                 onClick={handleInstall}
-                className="ml-4 bg-white text-blue-600 px-3 py-1 rounded">
+                className="ml-4 bg-white text-baseclr px-3 py-1 rounded hover:bg-baseclr transition text-sm">
                 Install
             </button>
         </div>
