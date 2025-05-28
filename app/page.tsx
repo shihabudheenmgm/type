@@ -80,7 +80,7 @@ const Home: React.FC = () => {
                                     <Link
                                         href={"/Register"}
                                         className="text-baseclr">
-                                        Resister
+                                        Register
                                     </Link>
                                 </p>
                             </div>
