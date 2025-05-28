@@ -1,6 +1,4 @@
-type Props = {};
-
-const Admin = (props: Props) => {
+const Admin = () => {
     // useEffect(() => {
     //     fetch("/api/me").then((res) => {
     //         if (!res.ok) router.push("/login");
