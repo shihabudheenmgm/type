@@ -2,9 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {};
-
-const Register = (props: Props) => {
+const Register = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="shadow-lg w-96">

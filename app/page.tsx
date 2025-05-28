@@ -18,7 +18,7 @@ const Home = () => {
                         priority
                     />
                     <h1 className="mt-4 mb-1 text-lg text-white font-semibold">
-                        Let's Get Started Name
+                        Let&apos;s Get Started Name
                     </h1>
                     <h5 className="text-gray-400 text-sm">
                         Sign in to continue to Name.

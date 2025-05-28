@@ -1,9 +1,11 @@
 import Nav from "./Nav";
 
-type Props = {};
-
-const Header = (props: Props) => {
-    return <div>Header</div>;
+const Header = () => {
+    return (
+        <>
+            <Nav></Nav>
+        </>
+    );
 };
 
 export default Header;
