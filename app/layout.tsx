@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
+import PWAPrompt from "@/app/Components/pwa/pwaprompt";
 
 const figSans = Figtree({
     variable: "--font-fig-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
                 <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
             </head>
             <body className={`${figSans.variable} antialiased`}>
+                <PWAPrompt />
                 <main>{children}</main>
             </body>
         </html>

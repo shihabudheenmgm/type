@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Register: React.FC = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="shadow-lg w-96">
-                <div className="rounded-t-lg bg-black flex flex-col items-center justify-center p-8">
+        <div className="md:min-h-screen md:flex items-center justify-center md:bg-gray-100 bg-white">
+            <div className="md:shadow-lg md:w-96">
+                <div className="md:rounded-t-lg bg-black flex flex-col items-center justify-center p-8">
                     <Image
                         src="/images/logo.svg"
                         alt="logo"
@@ -20,7 +20,7 @@ const Register: React.FC = () => {
                         Enter your detail to Create your account today.
                     </h5>
                 </div>
-                <div className="bg-white p-6 rounded-b-lg">
+                <div className="bg-white p-6 md:rounded-b-lg max-md:max-w-96 mx-auto">
                     <form>
                         <div className="mb-2">
                             <label className="text-sm mb-1 font-medium text-gray-600 block">
