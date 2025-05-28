@@ -72,7 +72,10 @@ const Home: React.FC = () => {
                                 type="submit"
                                 className="w-full bg-baseclr text-sm font-semibold text-white py-2 rounded-lg transition h-10 cursor-pointer flex items-center justify-center gap-2.5">
                                 <span>Login</span>
-                                <FontAwesomeIcon icon={faSignIn} />
+                                <FontAwesomeIcon
+                                    icon={faSignIn}
+                                    className="w-3.5"
+                                />
                             </button>
                             <div className="mt-6">
                                 <p className="text-sm text-gray-500 text-center">
