@@ -11,7 +11,7 @@ const Home = () => {
                 <div className="rounded-t-lg bg-black flex flex-col items-center justify-center p-8">
                     <Image
                         src="/images/logo.svg"
-                        alt=""
+                        alt="logo"
                         width={100}
                         height={60}
                         className="w-24"
